@@ -34,15 +34,15 @@ And below is an example of what the data in a log file, 2018-11-12-events.json, 
 
 ### Fact Table
 songplays - records in log data associated with song plays i.e. records with page NextSong
-`songplay_id (serial), start_time, user_id, level, song_id, artist_id, session_id, location, user_agent`
+`songplay_id (serial) (PK), start_time (FK - TIME), user_id (FK - USERS), level, song_id, artist_id, session_id, location, user_agent`
 
 ### Dimension Tables
 
 users - users in the application
-`user_id INT PRIMARY KEY, first_name VARCHAR , last_name VARCHAR , gender char(1), level char(4)`
+`user_id INT (PK), first_name , last_name  , gender, level`
 
 songs - songs in music database
-`song_id (PK), title, artist_id, year, duration`
+`song_id (PK), title, artist_id (FK - ARTISTS), year, duration`
 
 artists - artists in music database
 `artist_id, name, location, latitude, longitude`
